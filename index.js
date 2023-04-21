@@ -10,17 +10,22 @@ const generateCVG = require('./src/generateCVG');
 const questions = [
     {
         type: 'input',
-        name: 'name',
-        message: "What are three characters that represent your vision? (Required)",
+        name: 'text',
+        message: "Enter up to three characters. (Required)",
     },
     {
         type: 'input',
-        name: 'color',
-        message: "Enter a color for the background of your logo (Required)",
+        name: 'textColor',
+        message: "Enter a color keyword (or hexadecimal number) for font color. (Required)",
     },
     {
         type: 'list',
         name: 'shape',
         choices: ['circle', 'square', 'triangle']
+    },
+    {
+        type: 'input',
+        name: 'shapeColor',
+        message: "Enter a color keyword (or hexadecmial number) for the color of your shape. (Required)",
     }
 ];
