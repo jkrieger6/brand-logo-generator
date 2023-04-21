@@ -5,7 +5,7 @@ const path = require('path');
 // Package to run tests
 const jest = require('jest');
 
-const generateCVG = require('./src/generateCVG');
+const generateCVG = require('./assets/generateCVG');
 // Array of questions for user input
 const questions = [
     {
