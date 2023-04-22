@@ -5,7 +5,31 @@ const path = require('path');
 // Package to run tests
 const jest = require('jest');
 
-const generateCVG = require('./assets/generateCVG');
+// Array of questions for user input
+const questions = [
+    {
+        type: 'input',
+        name: 'text',
+        message: 'Enter up to three characters of text for your badge:',
+    },
+    {
+        type: 'input',
+        name: 'textColor',
+        message: 'Enter a color or hexidecimal number for your text:',
+    },
+    {
+        type: 'input',
+        name: 'shapeColor',
+        message: 'Enter a color or hexidecimal number for your shape:',
+    },
+    {
+        type: 'list',
+        name: 'shape',
+        message: 'Choose a shape for your badge:',
+        choices: ['circle', 'square', 'triangle'],
+    },  
+];
+
 // array of questions for user input as class constructor
 class Questions {
     constructor(text, textColor, shape, shapeColor) {
