@@ -1,0 +1,23 @@
+{
+  "name": "brand-logo-generator",
+  "version": "1.0.0",
+  "description": "A Node.js command-line application that takes in user input to generate a logo and save it as an SVG file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkrieger6/brand-logo-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jkrieger6/brand-logo-generator/issues"
+  },
+  "homepage": "https://github.com/jkrieger6/brand-logo-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
