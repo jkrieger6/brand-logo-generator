@@ -62,13 +62,23 @@ class Circle extends Questions {
     }
 // function to initialize application
 function init() {
-    inquierer.prompt(questions)
+    const outputDirectory = path.join(process.cwd(), 'output');
+    if (!fs.existsSync(outputDirectory)) {
+        fs.mkdirSync(outputDirectory);
+    }
+    const outputPath = path.join(outputDirectory, 'logo.svg');
+    writeToFile(outputPath, generateCVG(data));
+    inquierer.prompt(data)
     .then((data) => {
         const logo = generateCVG(data);
         fs.writeFileSync('logo.svg', logo);
         console.log('Succesfully generated logo.svg');
     });
 }
+
+// function call to initialize application
+init();
+
 // function to generate cvg file
 function generateCVG (data) {
     return `
