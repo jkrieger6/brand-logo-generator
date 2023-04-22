@@ -15,3 +15,6 @@ class Questions {
         this.shapeColor = shapeColor;
     }
 }
+// varables to design shape and color options
+const shape = ['circle', 'square', 'triangle'];
+const color = ['red', 'blue', 'green', 'yellow', 'purple', 'orange'];
