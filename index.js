@@ -60,7 +60,15 @@ class Circle extends Questions {
             super(text, textColor, shape, shapeColor);
         }
     }
-
+// function to initialize application
+function init() {
+    inquierer.prompt(questions)
+    .then((data) => {
+        const logo = generateCVG(data);
+        fs.writeFileSync('logo.svg', logo);
+        console.log('Succesfully generated logo.svg');
+    });
+}
 // function to generate cvg file
 function generateCVG (data) {
     return `
