@@ -6,26 +6,12 @@ const path = require('path');
 const jest = require('jest');
 
 const generateCVG = require('./assets/generateCVG');
-// Array of questions for user input
-const questions = [
-    {
-        type: 'input',
-        name: 'text',
-        message: "Enter up to three characters. (Required)",
-    },
-    {
-        type: 'input',
-        name: 'textColor',
-        message: "Enter a color keyword (or hexadecimal number) for font color. (Required)",
-    },
-    {
-        type: 'list',
-        name: 'shape',
-        choices: ['circle', 'square', 'triangle']
-    },
-    {
-        type: 'input',
-        name: 'shapeColor',
-        message: "Enter a color keyword (or hexadecmial number) for the color of your shape. (Required)",
+// array of questions for user input as class constructor
+class Questions {
+    constructor(text, textColor, shape, shapeColor) {
+        this.text = text;
+        this.textColor = textColor;
+        this.shape = shape;
+        this.shapeColor = shapeColor;
     }
-];
+}
