@@ -68,11 +68,15 @@ function init() {
     }
     const outputPath = path.join(outputDirectory, 'logo.svg');
     writeToFile(outputPath, generateCVG(data));
-    inquierer.prompt(data)
+    inquierer.prompt(questions)
     .then((data) => {
         const logo = generateCVG(data);
         fs.writeFileSync('logo.svg', logo);
-        console.log('Succesfully generated logo.svg');
+        if (writeToFile === true) {
+            console.log('Succesfully generated logo.svg');
+        } else {
+            console.log('Error generating logo.svg');
+        }
     });
 }
 
