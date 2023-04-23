@@ -93,16 +93,11 @@ function generateCVG (data) {
     `;
 }
 // function to write cvg file
-if (data.shape === 'circle') {
-    svg += `<circle cx="150" cy="100" r="50" fill="${data.shapeColor}" />`;
-  } else if (data.shape === 'triangle') {
-    svg += `<polygon points="150,50 100,150 200,150" fill="${data.shapeColor}" />`;
-  } else if (data.shape === 'square') {
-    svg += `<rect x="50" y="50" width="200" height="100" fill="${data.shapeColor}" />`;
-  }
-
-  svg += `<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="80" fill="${data.textColor}">${data.text}</text>`;
-
-  const logo = `<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">${svg}</svg>`;
-  fs.writeFileSync('logo.svg', logo);
-  console.log('Generated logo.svg');
+function writeToFile(fileName, data) {
+    const svgTmplate = generateCVG(data);
+    fs.writeFile(fileName, svgTmplate, (err) => {
+        err 
+        ? console.log(err) 
+        : console.log('Succesfully generated logo.svg');
+    });
+}
