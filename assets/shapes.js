@@ -25,9 +25,9 @@ const cvgColor = `<rect width="100%" height="100%" fill=${data.textColor} />`;
 
 function generateTextColorCvg(cvgColor) {
     if (data.textColor === 'red') {
-        return reduce;
+        return <style> color = 'red' + style color= '#ff0000'</style>;
     } else if (data.textColor === 'blue') {
-        return blue;
+        return <style> color = 'blue' + color = '#0000ff' </style>;
     } else if (data.textColor === 'green') {
         return green;
     } else if (data.textColor === 'yellow') {
@@ -36,8 +36,8 @@ function generateTextColorCvg(cvgColor) {
         return purple;
     } else if (data.textColor === 'orange') {
         return orange;
-    } else {
-        return "(err)";
+    } else if (data.textColor === 'black') {
+        return black;
     }
 }
 
