@@ -11,11 +11,17 @@ const questions = [
         type: 'input',
         name: 'text',
         message: 'Enter up to three characters of text for your badge:',
+        validate: (input) => {
+            return input.length >= 0 && input.length <= 3
+        }
     },
     {
         type: 'input',
         name: 'textColor',
         message: 'Enter a color or hexidecimal number for your text:',
+        validate: (input) => {
+            retun 
+        }
     },
     {
         type: 'input',
