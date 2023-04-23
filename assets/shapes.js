@@ -16,15 +16,15 @@ function renderShape(shape) {
     }
 }
 
-// Function to add text to cvg
+// Function to add text to svg
 const svgText = `<text x="50%" y="50%" fill="black" font-size="30" text-anchor="middle" dy=".3em">${data.text}</text>`;
- function generateTextCvg(svgText) {
+ function renderTextSvg(svgText) {
     return svgText;
  }
-// Variable to add color to text to cvg
-const svgTextColor = `<rect width="100%" height="100%" fill=${data.textColor} />`;
+// Function to add color to text to svg
+const svgTextColor = `${data.textColor}`;
 
-function generateTextColorsvg(textColor) {
+function generateTextColorSvg(textColor) {
     if (data.textColor === 'red') {
         return <style> color = 'red' + style color= '#ff0000'</style>;
     } else if (data.textColor === 'blue') {
@@ -42,7 +42,7 @@ function generateTextColorsvg(textColor) {
     }
 }
 
-// Function to add shapeColor to cvg
+// Function to add shapeColor to svg
 function generateShapeColorSvg(shapeColor) {
     if (data.shapeColor === 'red') {
         return red;
@@ -69,7 +69,7 @@ function generateShapeColorSvg(shapeColor) {
 
 // Function that returns color choice to svg
 function renderShapeColor(shapeColor) {
-    return ` ${generateShapeColorSvg(shapeColor)} ${generateTextColorCvg(textColor)}`
+    return ` ${generateShapeColorSvg(shapeColor)} ${generateTextColorSvg(textColor)}`
 }
 
 
