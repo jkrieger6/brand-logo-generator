@@ -60,31 +60,9 @@ class Circle extends Questions {
             super(text, textColor, shape, shapeColor);
         }
     }
-// function to initialize application
-function init() {
-    const outputDirectory = path.join(process.cwd(), 'output');
-    if (!fs.existsSync(outputDirectory)) {
-        fs.mkdirSync(outputDirectory);
-    }
-    const outputPath = path.join(outputDirectory, 'logo.svg');
-    writeToFile(outputPath, generateCVG(data));
-    inquierer.prompt(questions)
-    .then((data) => {
-        const logo = generateCVG(data);
-        fs.writeFileSync('logo.svg', logo);
-        if (writeToFile === true) {
-            console.log('Succesfully generated logo.svg');
-        } else {
-            console.log('Error generating logo.svg');
-        }
-    });
-}
 
-// function call to initialize application
-init();
-
-// function to generate cvg file
-function generateCVG (data) {
+// Function to generate svg file
+function generateSVG (data) {
     return `
     <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
         <rect width="100%" height="100%" fill="${data.shapeColor}" />
@@ -92,12 +70,34 @@ function generateCVG (data) {
     </svg>
     `;
 }
-// function to write cvg file
+// Function to write svg file
 function writeToFile(fileName, data) {
-    const svgTmplate = generateCVG(data);
+    const svgTmplate = generateSVG(data);
     fs.writeFile(fileName, svgTmplate, (err) => {
         err 
         ? console.log(err) 
         : console.log('Succesfully generated logo.svg');
     });
 }
+
+// function to initialize application
+function init() {
+    const outputDirectory = path.join(process.cwd(), 'output');
+    if (!fs.existsSync(outputDirectory)) {
+        fs.mkdirSync(outputDirectory);
+    } else {
+    inquierer.prompt(questions)
+    .then((data) => {
+        const logo = generateSVG(data);
+        fs.writeFileSync('logo.svg', logo);
+        console.log('Succesfully generated logo.svg');
+    })
+        .catch((err) => {
+                console.log(err);
+            });
+        }
+    }
+
+
+// Function call to initialize application
+init();
