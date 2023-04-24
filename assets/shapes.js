@@ -1,3 +1,5 @@
+const index = require('../index.js');
+
 // Shapes variables
 const circle = `<circle cx="25" cy="25" r="20"/>`;
 const square = `<rect x="10" y="10" width="30" height="30"/>`;
@@ -12,17 +14,17 @@ function renderShape(shape) {
     } else if (shape === 'triangle') {
         return triangle;
     } else {
-        return "(err)";
+        return "Please select a shape from the list.";
     }
 }
 
 // Function to add text to svg
-const svgText = `<text x="50%" y="50%" fill="black" font-size="30" text-anchor="middle" dy=".3em">${data.text}</text>`;
- function renderTextSvg(svgText) {
+const svgText = data.text;
+ function renderTextSvg(text) {
     return svgText;
  }
 // Function to add color to text to svg
-const svgTextColor = `${data.textColor}`;
+const svgTextColor = data.textColor;
 
 function generateTextColorSvg(textColor) {
     if (data.textColor === 'red') {
@@ -41,6 +43,15 @@ function generateTextColorSvg(textColor) {
         return black;
     }
 }
+
+// Or do i just make a function to check if the color is truthy and 
+// then return the color and error if false?
+// Example:
+//function generateShapeColorSvg(shapeColor) {
+//   if (data.shapeColor === true) {
+    //     return data.shapeColor;
+    // } else {
+    //     return "Please enter a valid color.";
 
 // Function to add shapeColor to svg
 function generateShapeColorSvg(shapeColor) {
@@ -68,8 +79,20 @@ function generateShapeColorSvg(shapeColor) {
 }
 
 // Function that returns color choice to svg
-function renderShapeColor(shapeColor) {
-    return ` ${generateShapeColorSvg(shapeColor)} ${generateTextColorSvg(textColor)}`
+function renderColor(textColor, shapeColor) {
+    return ` 
+    ${generateShapeColorSvg(shapeColor)} 
+    ${generateTextColorSvg(textColor)}`;
 }
 
+// Function to generate svg file
+function generateSVG(data) {
+    return `
+    <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+        "${renderShape(data.shape)}${(renderColor(textColor, shapeColor))}"
+        <text x="50%" y="50%" fill="${data.textColor}" font-size="30" text-anchor="middle" dy=".3em">${data.text}</text>
+        </svg>`;
+}
+
+module.exports = generateSVG;
 
