@@ -1,6 +1,6 @@
 const index = require("../index.js");
 
-// Shapes variables
+// Shapes class 
 // class Shapes {
 //   constructor(shape, shapeColor) {
 //     this.shape = shape;
@@ -30,6 +30,18 @@ function renderShape(shape) {
 }
 
 // Function to add text to svg
+
+// class Text {
+//   constructor(text, textColor) {
+//     this.text = text;
+//     this.textColor = textColor;
+// const svgText = data.text;
+// if (svgText.length > 3) {
+//   throw new Error("Please enter a text that is less than 3 characters.");
+//   }
+// }
+// }
+
 const svgText = data.text;
 function renderTextSvg(text) {
   return svgText;
