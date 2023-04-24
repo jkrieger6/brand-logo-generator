@@ -38,10 +38,9 @@ const questions = [
 // array of questions for user input as class constructor
 class Questions {
   constructor(text, textColor, shape, shapeColor) {
-    this.text = text;
-    this.textColor = textColor;
-    this.shape = shape;
-    this.shapeColor = shapeColor;
+    if(text.length > 3) {
+      throw new Error("Please enter a text that is less than 3 characters.");
+    } 
   }
 }
 // varables to design shape and color options
