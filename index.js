@@ -1,8 +1,12 @@
-// Packages to run application
+// Node packages to run application
 const inquierer = require('inquirer');
+// Node packages to create file
 const fs = require('fs');
 const path = require('path');
+// module imported to generate svg
 const generateSVG = require('./assets/generateSVG');
+// Node package to generate colors
+const colors = require('chalk');
 // Package to run tests
 const jest = require('jest');
 
