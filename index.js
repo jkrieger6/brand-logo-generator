@@ -16,27 +16,16 @@ const questions = [
     type: "input",
     name: "text",
     message: "Enter up to three characters of text for your logo:",
-    validate: (input) => {
-      return input.length >= 0 && input.length <= 3
-        ? true
-        : "Please enter up to three characters.";
-    },
   },
   {
     type: "input",
     name: "textColor",
     message: "Enter a color or hexidecimal number for your text:",
-    validate: (input) => {
-      return;
-    },
   },
   {
     type: "input",
     name: "shapeColor",
     message: "Enter a color or hexidecimal number for your shape:",
-    validate: (input) => {
-      return;
-    },
   },
   {
     type: "list",
