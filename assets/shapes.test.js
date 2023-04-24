@@ -28,10 +28,19 @@ describe('Initialize renderShape', () => {
 });
 
 // Test to check if the generateTextCvg function returns text
-desscribe('Initilaize renderTextSvg', () => {
+describe('Initilaize renderTextSvg', () => {
     it('should return user input text', () => {
         const text = 'abc';
         const result = new SvgText(text);
         expect(result).toBe(text);
+    });
+});
+
+// Test to see if error is thrown when number of characters is greater than 3
+describe('Initialize renderTextSvg', () => {
+    it('should thrown an error if a number greater than three is entered', () => {
+        const text = 'abcd';
+        const result = new SvgText(text);
+        expect(result).toThrowError('Please enter up to three characters.');
     });
 });
