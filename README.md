@@ -2,7 +2,7 @@
 A Node.js command-line application that takes in user input to generate a logo and save it as an SVG file. 
 
 ## Project Description
-
+This application is to be run from the users terminal after following the install instructions. Once the user has started the program, they will be prompted to answer a series of questions. The answers to these questions will be used to generate a logo and save it as an SVG file. The user will be able to choose the color of the logo,  the shape of the logo, and the text that will be displayed on the logo. The user will then be generated an svg file named logo.sgv in a new directory in their project.
 
 ## User Story
 ```md
