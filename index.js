@@ -2,17 +2,21 @@
 const inquierer = require('inquirer');
 const fs = require('fs');
 const path = require('path');
+const generateSVG = require('./assets/generateSVG');
 // Package to run tests
 const jest = require('jest');
+
+
 
 // Array of questions for user input
 const questions = [
     {
         type: 'input',
         name: 'text',
-        message: 'Enter up to three characters of text for your badge:',
+        message: 'Enter up to three characters of text for your logo:',
         validate: (input) => {
-            return input.length >= 0 && input.length <= 3
+            return (input.length >= 0 && input.length <= 3) ? true 
+            : 'Please enter up to three characters.';
         }
     },
     {
@@ -20,13 +24,16 @@ const questions = [
         name: 'textColor',
         message: 'Enter a color or hexidecimal number for your text:',
         validate: (input) => {
-            retun 
+            return 
         }
     },
     {
         type: 'input',
         name: 'shapeColor',
         message: 'Enter a color or hexidecimal number for your shape:',
+        validate: (input) => {
+            return
+        }
     },
     {
         type: 'list',
@@ -79,6 +86,7 @@ function generateSVG (data) {
 // Function to write svg file
 function writeToFile(fileName, data) {
     const svgTmplate = generateSVG(data);
+
     fs.writeFile(fileName, svgTmplate, (err) => {
         err 
         ? console.log(err) 
@@ -92,10 +100,11 @@ function init() {
     if (!fs.existsSync(outputDirectory)) {
         fs.mkdirSync(outputDirectory);
     } else {
+        const outPutPath = path.join(outputDirectory, 'logo.svg');
     inquierer.prompt(questions)
     .then((data) => {
         const logo = generateSVG(data);
-        fs.writeFileSync('logo.svg', logo);
+        writeToFile(outPutPath, logo);
         console.log('Succesfully generated logo.svg');
     })
         .catch((err) => {
