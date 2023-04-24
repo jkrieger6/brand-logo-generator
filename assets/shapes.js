@@ -1,23 +1,23 @@
 const index = require("../index.js");
 
 // Shapes class 
-// class Shapes {
-//   constructor(shape, shapeColor) {
-//     this.shape = shape;
-//     this.shapeColor = shapeColor;
-//   };
+class Shapes {
+  constructor(shape, shapeColor) {
+    this.shape = shape;
+    this.shapeColor = shapeColor;
+  };
 // Render shape function
-// renderShape() {
-//   if (this.shape === "circle") {
-//     return `<circle cx="25" cy="25" r="20" fill="${this.color}" />`;
-//   } else if (this.shape === "square") {
-//     return `<rect x="10" y="10" width="30" height="30" fill="${this.color}" />`;
-//   } else if (this.shape === "triangle") {
-//     return `<polygon points="25,5 5,45 45,45" fill="${this.color}" />`;
-//   } else {
-//     return "Please select a shape from the list.";
-//   }
-// };
+renderShape() {
+  if (this.shape === "circle") {
+    return `<circle cx="25" cy="25" r="20" fill="${this.color}" />`;
+  } else if (this.shape === "square") {
+    return `<rect x="10" y="10" width="30" height="30" fill="${this.color}" />`;
+  } else if (this.shape === "triangle") {
+    return `<polygon points="25,5 5,45 45,45" fill="${this.color}" />`;
+  } else {
+    return "Please select a shape from the list.";
+  }
+};
 
 // Text class
 // class SvgText {
@@ -28,24 +28,12 @@ const index = require("../index.js");
 // Render text function
 // renderTextSvg() {
 //   return `<text x="50%" y="50%" fill="${this.textColor}" font-size="30" text-anchor="middle" dy=".3em">${this.text}</text>`;
-// };
+};
 
 const circle = `<circle cx="25" cy="25" r="20"/>`;
 const square = `<rect x="10" y="10" width="30" height="30"/>`;
 const triangle = `<polygon points="25,5 5,45 45,45"/>`;
 
-// Function to render shape on user input
-function renderShape(shape) {
-  if (shape === "circle") {
-    return circle;
-  } else if (shape === "square") {
-    return square;
-  } else if (shape === "triangle") {
-    return triangle;
-  } else {
-    return "Please select a shape from the list.";
-  }
-}
 
 // Function to add text to svg
 
