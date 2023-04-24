@@ -37,7 +37,7 @@ function renderShape(shape) {
 //     this.textColor = textColor;
 // const svgText = data.text;
 // if (svgText.length > 3) {
-//   throw new Error("Please enter a text that is less than 3 characters.");
+//   throw new Error("Please enter up to three characters.");
 //   }
 // }
 // }
