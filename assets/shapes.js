@@ -7,8 +7,14 @@ const index = require("../index.js");
 //     this.shapeColor = shapeColor;
 //   };
 
-//   if (data.shape === "circle" || data.shape === "square" || data.shape === "trangle") {
-//     return Shapes;
+//   if (data.shape === "circle") {
+//     return circle;
+//   } else if (data.shape === "square") {
+//     return square;
+//   } else if (data.shape === "triangle") {
+//     return triangle;
+//   } else {
+//     return "Please select a shape from the list.";
 //   }
 // };
 
