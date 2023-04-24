@@ -28,19 +28,19 @@ const svgTextColor = data.textColor;
 
 function generateTextColorSvg(textColor) {
     if (data.textColor === 'red') {
-        return <style> color = 'red' + style color= '#ff0000'</style>;
+        return chalk.red(data.text);
     } else if (data.textColor === 'blue') {
-        return <style> color = 'blue' + color = '#0000ff' </style>;
+        return chalk.blue(data.text);
     } else if (data.textColor === 'green') {
-        return green;
+        return chalk.green(data.text);
     } else if (data.textColor === 'yellow') {
-        return yellow;
+        return chalk.yellow(data.text);
     } else if (data.textColor === 'purple') {
-        return purple;
+        return chalk.purple(data.text);
     } else if (data.textColor === 'orange') {
-        return orange;
+        return chalk.orange(data.text);
     } else if (data.textColor === 'black') {
-        return black;
+        return chalk.black(data.text);
     }
 }
 
@@ -49,7 +49,7 @@ function generateTextColorSvg(textColor) {
 // Example:
 //function generateShapeColorSvg(shapeColor) {
 //   if (data.shapeColor === true) {
-    //     return data.shapeColor;
+    //     return chalk.color(data.shape);
     // } else {
     //     return "Please enter a valid color.";
 
