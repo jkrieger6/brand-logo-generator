@@ -1,5 +1,5 @@
 // Node packages to run application
-const inquierer = require("inquirer");
+const inquirer = require("inquirer");
 // Node packages to create file
 const fs = require("fs");
 const path = require("path");
@@ -87,7 +87,7 @@ function init() {
     fs.mkdirSync(outputDirectory);
   } else {
     const outPutPath = path.join(outputDirectory, "logo.svg");
-    inquierer
+    inquirer
       .prompt(questions)
       .then((data) => {
         const logo = generateSVG(data);
