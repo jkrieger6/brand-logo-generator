@@ -48,7 +48,7 @@ git clone
 [GitHub](https://github.com/jkrieger6?tab=repositories "GitHub Repos")
 
 ## Usage
-* Start program to generate CVG file and create logo:
+* Start program to generate SVG file and create logo:
 ```
 node index.js
 ```
