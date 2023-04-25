@@ -7,8 +7,6 @@ const path = require("path");
 const generateSVG = require("./assets/generateSVG");
 // Node package to generate colors
 const colors = require("chalk");
-// Package to run tests
-const jest = require("jest");
 
 // Array of questions for user input
 const questions = [
