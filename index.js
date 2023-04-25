@@ -42,15 +42,6 @@ class Questions {
   }
 }
 
-// Function to generate svg file
-function generateSVG(data) {
-  return `
-    <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-        <rect width="100%" height="100%" fill="${data.shapeColor}" />
-        <text x="50%" y="50%" fill="${data.textColor}" font-size="30" text-anchor="middle" dy=".3em">${data.text}</text>
-    </svg>
-    `;
-}
 // Function to write svg file
 function writeToFile(fileName, data) {
   const svgTmplate = generateSVG(data);
