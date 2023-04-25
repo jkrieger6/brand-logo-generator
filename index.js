@@ -41,26 +41,6 @@ class Questions {
     } 
   }
 }
-// varables to design shape and color options
-const shape = ["circle", "square", "triangle"];
-const color = ["red", "blue", "green", "yellow", "purple", "orange"];
-class Circle extends Questions {
-  constructor(text, textColor, shapeColor) {
-    super(text, textColor, shape, shapeColor);
-  }
-}
-
-class Sqaure extends Questions {
-  constructor(text, textColor, shapeColor) {
-    super(text, textColor, shape, shapeColor);
-  }
-}
-
-class Triangle extends Questions {
-  constructor(text, textColor, shapeColor) {
-    super(text, textColor, shape, shapeColor);
-  }
-}
 
 // Function to generate svg file
 function generateSVG(data) {
