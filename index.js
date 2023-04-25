@@ -2,11 +2,9 @@
 const inquirer = require("inquirer");
 // Node packages to create file
 const fs = require("fs");
-const path = require("path");
+const path =require("path");
 // module imported to generate svg
-const generateSVG = require("./assets/generateSVG");
-// Node package to generate colors
-const colors = require("chalk");
+const generateSVG = require("./assets/shapes");
 
 // Array of questions for user input
 const questions = [
@@ -33,15 +31,6 @@ const questions = [
   },
 ];
 
-// array of questions for user input as class constructor
-class Questions {
-  constructor(text, textColor, shape, shapeColor) {
-    if(text.length > 3) {
-      throw new Error("Please enter a text that is less than 3 characters.");
-    } 
-  }
-}
-
 // Function to write svg file
 function writeToFile(fileName, data) {
   const svgTmplate = generateSVG(data);
@@ -53,7 +42,7 @@ function writeToFile(fileName, data) {
 
 // function to initialize application
 function init() {
-  const outputDirectory = path.join(process.cwd(), "output");
+  const outputDirectory = path.join(process.cwd(), "examples");
   if (!fs.existsSync(outputDirectory)) {
     fs.mkdirSync(outputDirectory);
   } else {
@@ -61,8 +50,8 @@ function init() {
     inquirer
       .prompt(questions)
       .then((data) => {
-        const logo = generateSVG(data);
-        writeToFile(outPutPath, logo);
+        console.log(data);
+        writeToFile(outPutPath, data);
         console.log("Succesfully generated logo.svg");
       })
       .catch((err) => {
