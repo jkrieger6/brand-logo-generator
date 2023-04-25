@@ -1,39 +1,58 @@
 const index = require("../index.js");
 
+
+//const shape = new Triangle();
+// shape.setColor("blue");
+// expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
+
 // Shapes class 
 class Shapes {
-  constructor(shape, shapeColor) {
-    this.shape = shape;
-    this.shapeColor = shapeColor;
-  };
-// Render shape function
-renderShape() {
-  if (this.shape === "circle") {
-    return `<circle cx="25" cy="25" r="20" fill="${this.color}" />`;
-  } else if (this.shape === "square") {
-    return `<rect x="10" y="10" width="30" height="30" fill="${this.color}" />`;
-  } else if (this.shape === "triangle") {
-    return `<polygon points="25,5 5,45 45,45" fill="${this.color}" />`;
-  } else {
-    return "Please select a shape from the list.";
+  constructor() {
+    this.shapeColor = "";
   }
-};
+  setColor (color) {
+    this.shapeColor = color;
+  }
+}
 
-// Text class
-// class SvgText {
-//   constructor(text, textColor) {
-//     this.text = text;
-//     this.textColor = textColor;
-//   };
+    class Circle extends Shapes {
+        render() {
+            return `<circle cx="25" cy="25" r="20" fill="${this.shapeColor}"/>`;
+        }
+    }
+
+    class Square extends Shapes {
+      render () {
+        return `<rect x="10" y="10" width="30" height="30" fill="${this.shapeColor}"/>`
+      }
+    }
+
+    class Triangle extends Shapes {
+        render() {
+            return `<polygon points="150, 18 244, 182 56, 182" fill="${this.shapeColor}"/>`
+        }
+    }
+
 // Render text function
-// renderTextSvg() {
-//   return `<text x="50%" y="50%" fill="${this.textColor}" font-size="30" text-anchor="middle" dy=".3em">${this.text}</text>`;
+function renderTextSvg() {
+  return `<text x="50%" y="50%" fill="${this.textColor}" font-size="30" text-anchor="middle" dy=".3em">${this.text}</text>`;
 };
 
-const circle = `<circle cx="25" cy="25" r="20"/>`;
-const square = `<rect x="10" y="10" width="30" height="30"/>`;
-const triangle = `<polygon points="25,5 5,45 45,45"/>`;
-
+// Function to render shapes
+function renderShape(shape, shapeColor) {
+    let shapeObj = null;
+    if (shape === 'circle') {
+        shapeObj = new Circle();
+    } else if(shape === 'square') {
+        shapeObj = new Square();
+    } else if(shape === 'triangle') {
+        shapeObj = new Triangle();
+    } else {
+        throw new Error('Please select a valid shape from the list.');
+    }
+    shapeObj.setColor(shapeColor)
+    return shapeObj.render()    
+}
 
 // Function to add text to svg
 
@@ -48,28 +67,6 @@ const triangle = `<polygon points="25,5 5,45 45,45"/>`;
 // }
 // }
 
-const svgText = data.text;
-// Function to add color to text to svg
-const svgTextColor = data.textColor;
-
-function generateTextColorSvg(textColor) {
-  if (data.textColor === "red") {
-    return chalk.red(data.text);
-  } else if (data.textColor === "blue") {
-    return chalk.blue(data.text);
-  } else if (data.textColor === "green") {
-    return chalk.green(data.text);
-  } else if (data.textColor === "yellow") {
-    return chalk.yellow(data.text);
-  } else if (data.textColor === "purple") {
-    return chalk.purple(data.text);
-  } else if (data.textColor === "orange") {
-    return chalk.orange(data.text);
-  } else if (data.textColor === "black") {
-    return chalk.black(data.text);
-  }
-}
-
 // Or do i just make a function to check if the color is truthy and
 // then return the color and error if false?
 // Example:
@@ -78,25 +75,6 @@ function generateTextColorSvg(textColor) {
 //     return chalk.color(data.shape);
 // } else {
 //     return "Please enter a valid color.";
-
-// Function to add shapeColor to svg
-function generateShapeColorSvg(shapeColor) {
-  if (data.shapeColor === "red") {
-    return red;
-  } else if (data.shapeColor === "blue") {
-    return blue;
-  } else if (data.shapeColor === "green") {
-    return green;
-  } else if (data.shapeColor === "yellow") {
-    return yellow;
-  } else if (data.shapeColor === "purple") {
-    return purple;
-  } else if (data.shapeColor === "orange") {
-    return orange;
-  } else {
-    return "(err)";
-  }
-}
 
 // Function that returns color choice to svg
 function renderColor(textColor, shapeColor) {
@@ -109,7 +87,7 @@ function renderColor(textColor, shapeColor) {
 function generateSVG(data) {
   return `
     <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-        "${renderShape(data.shape)}${renderColor(textColor, shapeColor)}"
+        ${renderShape(data.shape, data.shapeColor)}
         <text x="50%" y="50%" fill="${
           data.textColor
         }" font-size="30" text-anchor="middle" dy=".3em">${data.text}</text>
