@@ -49,9 +49,6 @@ const triangle = `<polygon points="25,5 5,45 45,45"/>`;
 // }
 
 const svgText = data.text;
-function renderTextSvg(text) {
-  return svgText;
-}
 // Function to add color to text to svg
 const svgTextColor = data.textColor;
 
