@@ -1,4 +1,6 @@
 const Shapes = require('./shapes.js');
+// Package to run tests
+const jest = require("jest");
 
 // Test to check if the renderShape function returns circle when chosen as shape
 describe('Initialize renderShape', () => {
