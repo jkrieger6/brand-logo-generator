@@ -54,35 +54,6 @@ function renderShape(shape, shapeColor) {
     return shapeObj.render()    
 }
 
-// Function to add text to svg
-
-// class Text {
-//   constructor(text, textColor) {
-//     this.text = text;
-//     this.textColor = textColor;
-// const svgText = data.text;
-// if (svgText.length > 3) {
-//   throw new Error("Please enter up to three characters.");
-//   }
-// }
-// }
-
-// Or do i just make a function to check if the color is truthy and
-// then return the color and error if false?
-// Example:
-//function generateShapeColorSvg(shapeColor) {
-//   if (data.shapeColor === true) {
-//     return chalk.color(data.shape);
-// } else {
-//     return "Please enter a valid color.";
-
-// Function that returns color choice to svg
-function renderColor(textColor, shapeColor) {
-  return ` 
-    ${generateShapeColorSvg(shapeColor)} 
-    ${generateTextColorSvg(textColor)}`;
-}
-
 // Function to generate svg file
 function generateSVG(data) {
   return `
