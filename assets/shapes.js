@@ -28,11 +28,6 @@ class Shapes {
         }
     }
 
-// Render text function
-function renderTextSvg() {
-  return `<text x="50%" y="50%" fill="${this.textColor}" font-size="30" text-anchor="middle" dy=".3em">${this.text}</text>`;
-};
-
 // Function to render shapes
 function renderShape(shape, shapeColor) {
     let shapeObj = null;
