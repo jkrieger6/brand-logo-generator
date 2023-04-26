@@ -75,4 +75,4 @@ function init() {
 // Function call to initialize application
 init();
 
-modeule.exports = textObj;
+module.exports = textObj;
