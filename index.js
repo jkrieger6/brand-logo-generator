@@ -12,6 +12,9 @@ const questions = [
     type: "input",
     name: "text",
     message: "Enter up to three characters of text for your logo:",
+    validate: function(text) {
+        return textObj(text);
+    }
   },
   {
     type: "input",
@@ -30,6 +33,15 @@ const questions = [
     choices: ["circle", "square", "triangle"],
   },
 ];
+
+// Function to verify text input is <= three characters
+function textObj(text) {
+    if (text.length <= 3) {
+        return true;
+    } else if (text.length > 3) {
+        return "Please enter up to three characters for your logo.";
+    }
+}
 
 // Function to write svg file
 function writeToFile(fileName, data) {
