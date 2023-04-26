@@ -17,13 +17,13 @@ class Shapes {
 
     class Circle extends Shapes {
         render() {
-            return `<circle cx="25" cy="25" r="20" fill="${this.shapeColor}"/>`;
+            return `<circle cx="150" cy="100" r="82" fill="${this.shapeColor}"/>`;
         }
     }
 
     class Square extends Shapes {
       render () {
-        return `<rect x="10" y="10" width="30" height="30" fill="${this.shapeColor}"/>`
+        return `<rect x="56" y="18" width="188" height="164" fill="${this.shapeColor}"/>`
       }
     }
 
@@ -57,12 +57,12 @@ function renderShape(shape, shapeColor) {
 // Function to generate svg file
 function generateSVG(data) {
   return `
-    <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-        ${renderShape(data.shape, data.shapeColor)}
-        <text x="50%" y="50%" fill="${
+    <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+       <g> ${renderShape(data.shape, data.shapeColor)}</g>
+        <text x="150" y="125" fill="${
           data.textColor
-        }" font-size="30" text-anchor="middle" dy=".3em">${data.text}</text>
-        </svg>`;
+        }" font-size="40" text-anchor="middle">${data.text}</text>
+    </svg>`;
 }
 
 module.exports = generateSVG;
