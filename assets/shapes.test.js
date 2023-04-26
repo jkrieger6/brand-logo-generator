@@ -2,30 +2,31 @@ const Shapes = require('./shapes.js');
 // Package to run tests
 const jest = require("jest");
 
-// Test to check if the renderShape function returns circle when chosen as shape
+// Test to check if the renderShape function returns a green circle when chosen as shape
 describe('Initialize renderShape', () => {
-    it('should return circle when chosen', () => {
-        const shape = circle;
-        const result = new Shapes(Shapes);
-        expect(result).toBe(shape);
+    it('should return a green circle when chosen', () => {
+        const shape = new Circle;
+        shape.setColor("green");
+        expect(result).toBe('<circle cx="150" cy="100" r="82" fill="green"/>');
     });
 });
 
-// Test to check if the renderShape function returns square when chosen as shape
+// Test to check if the renderShape function returns a red square when chosen as shape
 describe('Initialize renderShape', () => {
-    it('should return square when chosen', () => {
-        const shape = square;
-        const result = new Shapes(Shapes);
-        expect(result).toBe(shape);
+    it('should return a red square when chosen', () => {
+        const shape = new Square();
+        shape.setColor("red");
+        expect(result).toBe('<rect x="56" y="18" width="188" height="164" fill="red"/>');
     });
 });
 
-// Test to check if the renderShape function returns triangle when chosen as shape
+// Test to check if the renderShape function returns a blue triangle when chosen as shape
 describe('Initialize renderShape', () => {
-    it('should return triangle when chose as shape', () => {
-        const shape = triangle;
-        const result = new Shapes(Shapes);
-        expect(result).toBe(shape);
+    it('should return a blue triangle when chose as shape', () => {
+        const shape = new Triangle();
+        shape.setColor("blue");
+        expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
+
     });
 });
 
