@@ -1,19 +1,17 @@
 const Shapes = require('./shapes.js');
-const textObj = require('index.js');
-// Package to run tests
-const jest = require("jest");
+// const { Circle, Square, Triangle, textObj} = require('./index.js');
 
 // Test to check if the renderShape function returns a green circle when chosen as shape
-describe('Initialize renderShape', () => {
+describe('Initialize Circle', () => {
     it('should return a green circle when chosen', () => {
-        const shape = new Circle;
+        const shape = new Circle();
         shape.setColor("green");
         expect(result).toBe('<circle cx="150" cy="100" r="82" fill="green"/>');
     });
 });
 
 // Test to check if the renderShape function returns a red square when chosen as shape
-describe('Initialize renderShape', () => {
+describe('Initialize Square', () => {
     it('should return a red square when chosen', () => {
         const shape = new Square();
         shape.setColor("red");
@@ -22,7 +20,7 @@ describe('Initialize renderShape', () => {
 });
 
 // Test to check if the renderShape function returns a blue triangle when chosen as shape
-describe('Initialize renderShape', () => {
+describe('Initialize Triangle', () => {
     it('should return a blue triangle when chose as shape', () => {
         const shape = new Triangle();
         shape.setColor("blue");
@@ -35,7 +33,7 @@ describe('Initialize renderShape', () => {
 describe('Initialize textObj', () => {
     it('should thrown an error if a number greater than three is entered', () => {
         const text = 'abcd';
-        const result = new SvgText(text);
+        const result = new textObj(text);
         expect(result).toThrowError('Please enter up to three characters.');
     });
 });
