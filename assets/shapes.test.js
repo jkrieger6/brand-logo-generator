@@ -1,12 +1,26 @@
 const Shapes = require('./shapes.js');
-// const { Circle, Square, Triangle, textObj} = require('./index.js');
+const Circle = require('./shapes.js');
+const Square = require('./shapes.js');
+const Triangle = require('./shapes.js');
+const textObj = require('../index.js'); 
 
-// Test to check if the renderShape function returns a green circle when chosen as shape
-describe('Initialize Circle', () => {
+// Test to see if error is thrown when number of characters is greater than 3
+describe('textObj', () => {
+    it('should thrown an error if a number greater than 3 is entered', () => {
+        // const text = 'abcd';
+        // const result = textObj(text);
+        expect(textObj("abcd")).toEqual('Please enter up to three characters for your logo.');
+    });
+});
+
+
+
+// Test to check if the Shapes function returns a green circle when chosen as shape
+describe('Circle', () => {
     it('should return a green circle when chosen', () => {
         const shape = new Circle();
         shape.setColor("green");
-        expect(result).toBe('<circle cx="150" cy="100" r="82" fill="green"/>');
+        expect(shape.render()).toEqual('<circle cx="150" cy="100" r="82" fill="green"/>');
     });
 });
 
@@ -15,7 +29,7 @@ describe('Initialize Square', () => {
     it('should return a red square when chosen', () => {
         const shape = new Square();
         shape.setColor("red");
-        expect(result).toBe('<rect x="56" y="18" width="188" height="164" fill="red"/>');
+        expect(shape.render()).toEqual('<rect x="56" y="18" width="188" height="164" fill="red"/>');
     });
 });
 
@@ -26,14 +40,5 @@ describe('Initialize Triangle', () => {
         shape.setColor("blue");
         expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
 
-    });
-});
-
-// Test to see if error is thrown when number of characters is greater than 3
-describe('Initialize textObj', () => {
-    it('should thrown an error if a number greater than three is entered', () => {
-        const text = 'abcd';
-        const result = new textObj(text);
-        expect(result).toThrowError('Please enter up to three characters.');
     });
 });
