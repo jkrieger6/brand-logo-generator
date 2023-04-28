@@ -18,9 +18,6 @@ describe('Shapes', () => {
     it('should exist', () => {
         expect(Shapes).toBeDefined();
     })
-});
-
-
 // Test to check if the Shapes function returns a green circle when chosen as shape
 describe('renderShape', () => {
     it('should return a green circle when chosen', () => {
@@ -29,7 +26,6 @@ describe('renderShape', () => {
         expect(shape.render()).toEqual('<circle cx="150" cy="100" r="82" fill="green"/>');
     });
 });
-
 // Test to check if the renderShape function returns a red square when chosen as shape
 describe('Square', () => {
     it('should return a red square when chosen', () => {
@@ -48,3 +44,10 @@ describe('Triangle', () => {
 
     });
 });
+
+
+});
+
+
+
+
