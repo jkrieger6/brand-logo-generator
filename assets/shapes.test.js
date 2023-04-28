@@ -8,9 +8,8 @@ const textObj = require('../index.js');
 // Test to see if error is thrown when number of characters is greater than 3
 describe('textObj', () => {
     it('should thrown an error if a number greater than 3 is entered', () => {
-        // const text = 'abcd';
-        // const result = textObj(text);
-        expect(textObj("abcd")).toEqual('Please enter up to three characters for your logo.');
+        const text = 'abcd';
+        expect(textObj(text)).toEqual('Please enter up to three characters for your logo.');
     });
 });
 
