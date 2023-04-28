@@ -1,7 +1,8 @@
 const Shapes = require('./shapes.js');
-const Circle = require('./shapes.js');
-const Square = require('./shapes.js');
-const Triangle = require('./shapes.js');
+const renderShape = require('./shapes.js')
+const Circle = require('./shapes.js').Circle;
+const Square = require('./shapes.js').Square;
+const Triangle = require('./shapes.js').Triangle;
 const textObj = require('../index.js'); 
 
 // Test to see if error is thrown when number of characters is greater than 3
@@ -13,10 +14,15 @@ describe('textObj', () => {
     });
 });
 
+describe('Shapes', () => {
+    it('should exist', () => {
+        expect(Shapes).toBeDefined();
+    })
+});
 
 
 // Test to check if the Shapes function returns a green circle when chosen as shape
-describe('Circle', () => {
+describe('renderShape', () => {
     it('should return a green circle when chosen', () => {
         const shape = new Circle();
         shape.setColor("green");
@@ -25,7 +31,7 @@ describe('Circle', () => {
 });
 
 // Test to check if the renderShape function returns a red square when chosen as shape
-describe('Initialize Square', () => {
+describe('Square', () => {
     it('should return a red square when chosen', () => {
         const shape = new Square();
         shape.setColor("red");
@@ -34,7 +40,7 @@ describe('Initialize Square', () => {
 });
 
 // Test to check if the renderShape function returns a blue triangle when chosen as shape
-describe('Initialize Triangle', () => {
+describe('Triangle', () => {
     it('should return a blue triangle when chose as shape', () => {
         const shape = new Triangle();
         shape.setColor("blue");
