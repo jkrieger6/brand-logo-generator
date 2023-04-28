@@ -1,8 +1,8 @@
 const Shapes = require('./shapes.js');
 const renderShape = require('./shapes.js')
-const Circle = require('./shapes.js').Circle;
-const Square = require('./shapes.js').Square;
-const Triangle = require('./shapes.js').Triangle;
+const Circle = require('./shapes.js');
+const Square = require('./shapes.js');
+const Triangle = require('./shapes.js');
 const textObj = require('../index.js'); 
 
 // Test to see if error is thrown when number of characters is greater than 3
