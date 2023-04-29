@@ -18,7 +18,7 @@ describe('Shapes', () => {
         expect(Shapes).toBeDefined();
     })
 // Test to check if the Shapes function returns a green circle when chosen as shape
-describe('renderShape', () => {
+describe('Circle', () => {
     it('should return a green circle when chosen', () => {
         const shape = new Circle();
         shape.setColor("green");
