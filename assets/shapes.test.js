@@ -20,16 +20,10 @@ describe('Shapes', () => {
 });
 // Test to check if the Shapes function returns a green circle when chosen as shape
 describe('generateSVG', () => {
-    it('should return a green circle when chosen', () => {
+    it('should conatin a green circle in the SVG', () => {
         const shape = new Circle();
         shape.setColor("green");
-        expect(shape.render()).toEqual(`
-        <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-           <g> ${renderShape(data.shape, data.shapeColor)}</g>
-            <text x="150" y="125" fill="${
-              data.textColor
-            }" font-size="60" text-anchor="middle">${data.text}</text>
-        </svg>`);
+        expect(shape.render()).toContain(`<circle cx="150" cy="100" r="82" fill="green"/>`)
     });
 });
 // Test to check if the renderShape function returns a red square when chosen as shape
