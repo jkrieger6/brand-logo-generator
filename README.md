@@ -18,13 +18,14 @@ For a walk-through on how to use this program, or if you want to see it work bef
 ## Installation
 * Node version 16 inquierer package 8.2.4
 * To instal inquerier package use the following commands 
+* To run tests, install [Jest](https://jestjs.io/) using npm
 ```
 npm init -y
 npm i inquirer@8.2.4
 ```
 * Clone repository using GitHub
 ``` 
-git clone
+git clone https://github.com/jkrieger6/brand-logo-generator.git
 ```
 * Made using the latest versions of Visual Studio Code
 * Made with the latest version of GitHub
