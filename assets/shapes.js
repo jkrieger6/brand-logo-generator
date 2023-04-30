@@ -51,7 +51,7 @@ function generateSVG(data) {
        <g> ${renderShape(data.shape, data.shapeColor)}</g>
         <text x="150" y="125" fill="${
           data.textColor
-        }" font-size="60" text-anchor="middle">${data.text}</text>
+        }" font-size="50" text-anchor="middle">${data.text}</text>
     </svg>`;
 }
 
