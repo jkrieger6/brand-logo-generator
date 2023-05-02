@@ -55,7 +55,4 @@ function generateSVG(data) {
     </svg>`;
 }
 
-module.exports = generateSVG;
-
-
-// module.exports = { Shapes, Circle, renderShape, Triangle } 
+module.exports = { renderShape, generateSVG }
